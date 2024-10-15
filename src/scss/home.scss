@@ -1,0 +1,72 @@
+.hero {
+  min-height: 100svh;
+  display: flex;
+  overflow: hidden;
+  @media (min-width: toEm(375.98)){
+    padding: toRem(100) 0;
+  }
+  @media (max-width:toEm(375.98)){
+     padding: toRem(100) 0 toRem(50); 
+  }
+  // .hero__container
+  &__container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+	// .hero__body
+	&__body {
+	}
+	// .hero__left
+	&__left {
+    position: relative;
+    z-index: 2;
+	}
+	// .hero__title
+	&__title {
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    @include adaptiveValue("font-size", 100, 50,2,1440,600.98);
+    @include adaptiveValue("font-size", 80, 42,3,600.98,320);
+	}
+	// .hero__right
+	&__right {
+    position: absolute;
+    top: 0;
+    @media (min-width:toEm(1100.98)){
+      right: 0;
+      width: 50%;
+    }
+    @media (max-width: toEm(1100.98)){
+        width: 70%;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    @media (max-width:$mobileSmall){
+       width: 100%; 
+    }
+  }
+	// .hero__lottie
+	&__lottie {
+    width: 100%;
+    @media (min-width:$mobile){
+      transform: translate(20%,-10%);
+    }
+    @media (max-width:$mobileSmall){
+      transform: translate(0%,-10%);  
+    }
+	}
+}
+
+
+.second {
+  background-color: #fff;
+  min-height: 100svh;
+  color: $mainColor;
+  // .second__container
+  &__container {
+  }
+}
