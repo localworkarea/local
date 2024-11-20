@@ -1,3 +1,7 @@
+body {
+  background-color: $mainColor;
+  color: #fff;
+}
 [class*="__container"] {
   @extend %container;
 }
@@ -21,4 +25,24 @@
     background-color: $green;
     border-radius: 3px;
   }
+}
+// div {
+  // unicode-bidi: isolate;
+// }
+
+.btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: toRem(10) toRem(30);
+  border: toRem(1) solid #666;
+  border-radius: toRem(10);
+  
+  text-align: center;
+  font-size: toRem(18);
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: $mainColor;
+  
 }

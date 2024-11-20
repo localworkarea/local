@@ -8,13 +8,18 @@
 			@@include('html/_header.htm',{})
 			<main class="page">
 				<section class="hero">
+					<div class="hero__video">
+						<video class="hero__video-el ibg" autoplay muted loop playsinline >
+							<source src="files/hero-video.mp4" type="video/mp4" width="1440" height="800">
+						</video>
+					</div>
 					<div class="hero__container">
 						<div class="hero__right">
-							<canvas id="heroLottie" class="hero__lottie" width="500" height="500"></canvas>
+							<!-- <canvas id="heroLottie" class="hero__lottie" width="500" height="500"></canvas> -->
 						</div>
 						<div class="hero__left">
 							<h1 class="hero__title">
-								Создаем<br> 🚀сайты будущего
+								Websites That Drive<br> Business Growth
 							</h1>
 						</div>
 					</div>
@@ -43,5 +48,7 @@
 		@@include('html/_js.htm',{})
 		<!-- <script src="files/lottie-player.js"></script>
 		<script src="files/bodymovin.js"></script> -->
+		
+
 	</body>
 </html>

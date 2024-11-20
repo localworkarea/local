@@ -1,69 +1,79 @@
 * {
-	cursor: none !important;
+	// cursor: none !important;
 }
-.fls-cursor {
+.cursor {
 	width: 100%;
 	height: 100%;
 	position: fixed;
+	z-index: 200;
 	left: 0;
 	top: 0;
 	pointer-events: none;
-	&__shadow {
-		will-change: transform;
-		transition: all 0.05s linear 0s;
-		position: fixed;
-		width: toRem(50);
-		height: toRem(50);
-		&::after {
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			border: 3px solid #000;
-			animation: rotate 5s infinite linear;
-			@keyframes rotate {
-				0% {
-					transform: rotate(0deg);
-				}
-				100% {
-					transform: rotate(-360deg);
-				}
-			}
-		}
-	}
+	mix-blend-mode: difference;
+	// isolation: isolate;
+	// &__shadow {
+	// 	will-change: transform;
+	// 	transition: all 0.05s linear 0s;
+	// 	position: fixed;
+	// 	width: toRem(50);
+	// 	height: toRem(50);
+	// 	&::after {
+	// 		content: "";
+	// 		position: absolute;
+	// 		width: 100%;
+	// 		height: 100%;
+	// 		top: 0;
+	// 		left: 0;
+	// 		border: 3px solid #000;
+	// 		animation: rotate 5s infinite linear;
+	// 		@keyframes rotate {
+	// 			0% {
+	// 				transform: rotate(0deg);
+	// 			}
+	// 			100% {
+	// 				transform: rotate(-360deg);
+	// 			}
+	// 		}
+	// 	}
+	// }
 	&__pointer {
 		position: fixed;
-		width: toRem(3);
-		height: toRem(3);
+		width: toRem(12);
+		height: toRem(12);
 		top: 0;
 		left: 0;
+		// top: 50%;
+		// left: 50%;
+		transition: transform .45s cubic-bezier(.1,.88,.48,.94);
+
 		&::after {
 			content: "";
+			display: block;
+			background-color: #fff;
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			top: 0;
-			left: 0;
-			border: 3px solid #000;
-			transition: all 0.3s ease 0s;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			// border: 3px solid #000;
+			transition: transform 0.45s ease 0s;
 			border-radius: 50%;
 		}
 	}
 	&._hover {
-		.fls-cursor__pointer::after {
-			transform: scale(0.8);
+		.cursor__pointer::after {
+			// transform: scale(1.5);
 		}
-		.fls-cursor__shadow::after {
+		.cursor__shadow::after {
 		}
 	}
 	&._active {
-		.fls-cursor__pointer::after {
+		.cursor__pointer::after {
 			transition: all 0.05s ease 0s;
-			transform: scale(0.3);
+			transform: translate(-50%, -50%) scale(0.3);
 		}
-		.fls-cursor__shadow::after {
+		.cursor__shadow::after {
 		}
 	}
 }

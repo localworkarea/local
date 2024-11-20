@@ -8,13 +8,31 @@
   @media (max-width:toEm(375.98)){
      padding: toRem(100) 0 toRem(50); 
   }
+	// .hero__video
+	&__video {
+    position: absolute;
+    overflow: hidden;
+    inset: 0;
+    &::before {
+      content:'';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background-color: rgba(0,0,0,0.7);
+    }
+	}
+	// .hero__video-el
+	&__video-el {
+    transform: scale(1.1);
+	}
   // .hero__container
   &__container {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     position: relative;
+    z-index: 1;
   }
 	// .hero__body
 	&__body {
@@ -27,7 +45,8 @@
 	// .hero__title
 	&__title {
     font-weight: 800;
-    text-transform: uppercase;
+    // text-transform: uppercase;
+    text-align: center;
     line-height: 1.2;
     @include adaptiveValue("font-size", 100, 50,2,1440,600.98);
     @include adaptiveValue("font-size", 80, 42,3,600.98,320);
